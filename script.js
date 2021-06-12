@@ -44,7 +44,7 @@ switch (opcion) {
     case 2:
         console.log("EXTRACCION");
         ext = parseFloat(prompt("Saldo: " + "$" + saldo + "\ningrse monto extraccion"));
-        while (ext > saldo || ext < 2500 || ext !== NaN) {
+        while (ext > saldo || ext < 2500 || ext !== NaN || ext === 0) {
             if (ext < 2500) {
 
                 ext = parseFloat(prompt("Minimo 2500!\ningrse monto extraccion"));
@@ -65,7 +65,7 @@ switch (opcion) {
 
 
         if (opcion == 1) {
-            alert("saldo: " + saldo + "$" + "\nExtraccion: " + "$ " + ext);
+            alert("saldo: " + "$ " + saldo + "\nExtraccion: " + "$ " + ext);
             saldo = saldo - ext;
             alert("Operacion ATM System:\n\nUsted realizo una extraccion de:" + "$ " + ext + "\nsu nuevo saldo es:" + saldo + "$");
             console.log("Extracción por ATM System" + " " + "$ " + ext);
