@@ -32,6 +32,7 @@ switch (opcion) {
     case 1:
         alert("Su saldo es: " + saldo);
         console.log("Saldo ATM System" + saldo);
+        alert("Gracias por utilizar red ATM\n\nBANCO DE LA PLAZA\nSU BANCO");
         break;
     case 2:
         ext = parseFloat(prompt("Saldo: " + saldo + "$" + "\ningrse monto extraccion"));
@@ -49,6 +50,7 @@ switch (opcion) {
             saldo = saldo - ext;
             alert("Operacion ATM System:\n\nUsted realizo una extraccion de:" + ext + "$" + "\nsu nuevo saldo es:" + saldo + "$");
             console.log("Extracción por ATM System" + " " + ext + "$");
+            alert("Gracias por utilizar red ATM\n\nBANCO DE LA PLAZA\nSU BANCO");
 
         } else if (opcion == 2) {
             alert("gracias por utilizar ATM System!!");
@@ -61,6 +63,6 @@ switch (opcion) {
         saldo = saldo + deposito;
         alert("Operacion ATM System\nsu nuevo saldo es: " + saldo + " $");
         console.log("Deposito por ATM System" + " " + deposito + "$");
-
+        alert("Gracias por utilizar red ATM\n\nBANCO DE LA PLAZA\nSU BANCO");
         break;
 }
