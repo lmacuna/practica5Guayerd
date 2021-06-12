@@ -8,21 +8,28 @@ let usuario;
 let opcion;
 let saldo = 100000;
 let ext;
+let contUsuario = 1;
+let contPassword = 1;
 let deposito;
 let contrasenia = digito1 + "" + digito2 + "" + digito3 + "" + digito4;
 usuario = prompt("ingrese su Usuario");
 while (usuario != "lucas") {
+    contUsuario = contUsuario + 1;
     usuario = prompt("Usuario incorrecto!\nvuelva ingresar");
+    console.log("ERROR TIPEO USUARIO" + usuario + " INTENTO:" + contUsuario);
 }
-
+console.log("USUARIO CORRECTO " + usuario);
 
 
 alert("esta es su contraseña\n" + contrasenia);
 
 password = prompt("ingrese la contraseña asignada");
 while (password !== contrasenia) {
+    contPassword = contPassword + 1;
     password = prompt("Contraseña incorrecta!\ningrese la contraseña asignada");
+    console.log("ERROR TIPEO PASSWORD" + password + "INTENTO: " + contPassword);
 }
+console.log("PASSWORD CORRECTO " + password);
 opcion = parseInt(prompt("BIENVENIDO A \nBANCO DE LA PLAZA\n\nINGRESE OPCION\n\nMENU\n1-SALDO\n2-EXTRACCION\n3-DEPOSITO\n4-CAMBIO DE CLAVE"));
 while (opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4) {
     alert("ingreso fuera de opciones!\nIngrese nuevamente a continuacion");
@@ -35,6 +42,7 @@ switch (opcion) {
         alert("Gracias por utilizar red ATM\n\nBANCO DE LA PLAZA\nSU BANCO");
         break;
     case 2:
+        console.log("EXTRACCION");
         ext = parseFloat(prompt("Saldo: " + saldo + "$" + "\ningrse monto extraccion"));
         while (ext > saldo) {
             ext = parseFloat(prompt("Fondos insuficientes!!!\ningrse monto extraccion"));
@@ -50,11 +58,12 @@ switch (opcion) {
             saldo = saldo - ext;
             alert("Operacion ATM System:\n\nUsted realizo una extraccion de:" + ext + "$" + "\nsu nuevo saldo es:" + saldo + "$");
             console.log("Extracción por ATM System" + " " + ext + "$");
+            console.log("SALDO CUENTA XXXXXXXXXXXXXX " + saldo + " $");
             alert("Gracias por utilizar red ATM\n\nBANCO DE LA PLAZA\nSU BANCO");
 
         } else if (opcion == 2) {
             alert("gracias por utilizar ATM System!!");
-            console.log("sin operar");
+            console.log("EXTRACCION: sin operar");
 
         }
         break;
@@ -62,7 +71,9 @@ switch (opcion) {
         deposito = parseFloat(prompt("ingrese monto a depositar"));
         saldo = saldo + deposito;
         alert("Operacion ATM System\nsu nuevo saldo es: " + saldo + " $");
-        console.log("Deposito por ATM System" + " " + deposito + "$");
+        console.log("Deposito por ATM System\nCUENTA XXXXXXXXXXXXXXXXX " + deposito + "$");
         alert("Gracias por utilizar red ATM\n\nBANCO DE LA PLAZA\nSU BANCO");
         break;
 }
+console.log("ERROR TIPEO USUARIO " + contUsuario);
+console.log("ERROR TIPEO PASSWORD " + contPassword);
