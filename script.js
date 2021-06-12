@@ -11,6 +11,7 @@ let ext;
 let contUsuario = 1;
 let contPassword = 1;
 let deposito;
+
 let contrasenia = digito1 + "" + digito2 + "" + digito3 + "" + digito4;
 usuario = prompt("ingrese su Usuario");
 while (usuario != "lucas") {
@@ -44,20 +45,23 @@ switch (opcion) {
     case 2:
         console.log("EXTRACCION");
         ext = parseFloat(prompt("Saldo: " + "$" + saldo + "\ningrse monto extraccion"));
-        while (ext > saldo || ext < 2500 || ext !== NaN || ext === 0) {
+        while (ext > saldo || ext < 2500 || ext === 0 || isNaN(ext)) {
             if (ext < 2500) {
 
                 ext = parseFloat(prompt("Minimo 2500!\ningrse monto extraccion"));
 
+
             } else if (ext > saldo) {
                 ext = parseFloat(prompt("Fondos insuficientes!!!\ningrse monto extraccion"));
-                break;
+
+
             } else {
-                ext = parseFloat(prompt("No ingrese letras!!\nIngrese un monto valido por favor"));
+                ext = parseFloat(prompt("has ingresado letras\ningresa un monto valido"))
             }
 
 
         }
+
         opcion = prompt("Desea realizar una extraccion de" + "$ " + ext + "\nestas seguro?\n1-si\n2-No");
         while (opcion !== "1" && opcion !== "2") {
             opcion = prompt("Desea realizar una extraccion de" + "$ " + ext + "\nestas seguro?\n1-si\n2-No");
