@@ -37,28 +37,39 @@ while (opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4) {
 }
 switch (opcion) {
     case 1:
-        alert("Su saldo es: " + saldo);
-        console.log("Saldo ATM System" + saldo);
+        alert("Su saldo es: " + "$" + saldo);
+        console.log("Saldo ATM System" + "$" + saldo);
         alert("Gracias por utilizar red ATM\n\nBANCO DE LA PLAZA\nSU BANCO");
         break;
     case 2:
         console.log("EXTRACCION");
-        ext = parseFloat(prompt("Saldo: " + saldo + "$" + "\ningrse monto extraccion"));
-        while (ext > saldo) {
-            ext = parseFloat(prompt("Fondos insuficientes!!!\ningrse monto extraccion"));
+        ext = parseFloat(prompt("Saldo: " + "$" + saldo + "\ningrse monto extraccion"));
+        while (ext > saldo || ext < 2500 || ext !== NaN) {
+            if (ext < 2500) {
+
+                ext = parseFloat(prompt("Minimo 2500!\ningrse monto extraccion"));
+
+            } else if (ext > saldo) {
+                ext = parseFloat(prompt("Fondos insuficientes!!!\ningrse monto extraccion"));
+                break;
+            } else {
+                ext = parseFloat(prompt("No ingrese letras!!\nIngrese un monto valido por favor"));
+            }
+
+
         }
-        opcion = prompt("Desea realizar una extraccion de" + ext + "$\nestas seguro?\n1-si\n2-No");
+        opcion = prompt("Desea realizar una extraccion de" + "$ " + ext + "\nestas seguro?\n1-si\n2-No");
         while (opcion !== "1" && opcion !== "2") {
-            opcion = prompt("Desea realizar una extraccion de" + ext + "$\nestas seguro?\n1-si\n2-No");
+            opcion = prompt("Desea realizar una extraccion de" + "$ " + ext + "\nestas seguro?\n1-si\n2-No");
         }
 
 
         if (opcion == 1) {
-            alert("saldo: " + saldo + "$" + "\nExtraccion: " + ext + "$");
+            alert("saldo: " + saldo + "$" + "\nExtraccion: " + "$ " + ext);
             saldo = saldo - ext;
-            alert("Operacion ATM System:\n\nUsted realizo una extraccion de:" + ext + "$" + "\nsu nuevo saldo es:" + saldo + "$");
-            console.log("Extracción por ATM System" + " " + ext + "$");
-            console.log("SALDO CUENTA XXXXXXXXXXXXXX " + saldo + " $");
+            alert("Operacion ATM System:\n\nUsted realizo una extraccion de:" + "$ " + ext + "\nsu nuevo saldo es:" + saldo + "$");
+            console.log("Extracción por ATM System" + " " + "$ " + ext);
+            console.log("SALDO CUENTA XXXXXXXXXXXXXX " + "$" + saldo);
             alert("Gracias por utilizar red ATM\n\nBANCO DE LA PLAZA\nSU BANCO");
 
         } else if (opcion == 2) {
@@ -70,8 +81,8 @@ switch (opcion) {
     case 3:
         deposito = parseFloat(prompt("ingrese monto a depositar"));
         saldo = saldo + deposito;
-        alert("Operacion ATM System\nsu nuevo saldo es: " + saldo + " $");
-        console.log("Deposito por ATM System\nCUENTA XXXXXXXXXXXXXXXXX " + deposito + "$");
+        alert("Operacion ATM System\nsu nuevo saldo es: " + "$ " + saldo);
+        console.log("Deposito por ATM System\nCUENTA XXXXXXXXXXXXXXXXX " + "$ " + deposito);
         alert("Gracias por utilizar red ATM\n\nBANCO DE LA PLAZA\nSU BANCO");
         break;
 }
