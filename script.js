@@ -88,7 +88,8 @@ switch (opcion) {
         deposito = parseFloat(prompt("ingrese monto a depositar"));
         saldo = saldo + deposito;
         alert("Operacion ATM System\nsu nuevo saldo es: " + "$ " + saldo);
-        console.log("Deposito por ATM System\nCUENTA XXXXXXXXXXXXXXXXX " + "$ " + deposito);
+        console.log("Deposito por ATM System " + "$ " + deposito);
+        console.log("SALDO CUENTA XXXXXXXXXXXXXXXXX " + "$ " + saldo);
         alert("Gracias por utilizar red ATM\n\nBANCO DE LA PLAZA\nSU BANCO");
         break;
 }
