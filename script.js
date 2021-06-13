@@ -3,6 +3,10 @@ let digito1 = Math.floor(Math.random() * 9);
 let digito2 = Math.floor(Math.random() * 9);
 let digito3 = Math.floor(Math.random() * 9);
 let digito4 = Math.floor(Math.random() * 9);
+let letraPass = Math.floor(Math.random() * 5 + 1);
+let letraPasss = Math.floor(Math.random() * 5 + 1);
+let letra;
+let letraa;
 let password;
 let usuario;
 let opcion;
@@ -11,8 +15,40 @@ let ext;
 let contUsuario = 1;
 let contPassword = 1;
 let deposito;
+switch (letraPass) {
+    case 1:
+        letra = "a";
+        break;
+    case 2:
+        letra = "e";
+        break;
+    case 3:
+        letra = "i";
+        break;
+    case 4:
+        letra = "o";
+    case 5:
+        letra = "u";
+        break;
+}
+switch (letraPasss) {
+    case 1:
+        letraa = "a";
+        break;
+    case 2:
+        letraa = "e";
+        break;
+    case 3:
+        letraa = "i";
+        break;
+    case 4:
+        letraa = "o";
+    case 5:
+        letraa = "u";
+        break;
+}
 
-let contrasenia = digito1 + "" + digito2 + "" + digito3 + "" + digito4;
+let contrasenia = digito1 + "" + digito2 + "" + digito3 + "" + digito4 + "" + letra + "" + letraa;
 usuario = prompt("ingrese su Usuario");
 while (usuario != "lucas") {
 
@@ -28,7 +64,7 @@ alert("esta es su contraseña\n" + contrasenia);
 password = prompt("ingrese la contraseña asignada");
 while (password !== contrasenia) {
 
-    password = prompt("Contraseña incorrecta!\ningrese la contraseña asignada");
+    password = prompt("Contraseña incorrecta!\ningrese la contraseña asignada -->" + contrasenia);
     console.log("ERROR TIPEO PASSWORD  INTENTO: " + contPassword);
     contPassword = contPassword + 1;
 }
@@ -81,6 +117,7 @@ switch (opcion) {
         } else if (opcion == 2) {
             alert("gracias por utilizar ATM System!!");
             console.log("EXTRACCION: sin operar");
+            console.log("SALDO CUENTA XXXXXXXXXXXXXX " + "$" + saldo);
 
         }
         break;
